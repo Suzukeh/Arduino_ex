@@ -1,10 +1,3 @@
----
-export_on_save:
-    puppeteer: true # export PDF on save
-    puppeteer: ["pdf"] 
-    
----
-
 # 番外実験：Arduino
 本テキストは2026年5月時点の情報で構成されている。担当者は必要に応じて本テキストを更新すること。
 
@@ -113,11 +106,15 @@ ArduinoにはGPIOという外部との接続ポートが多数備わっている
 
 ![alt text](img/S工房_Arduino実験テキスト/image-9.png)
 
+シミュレータ: https://www.tinkercad.com/things/1f08fL2G9yL-ledblink?sharecode=t2eqbIRQHKJGVIeTDEv0rqaDbygKTUhLPxp3QmmWi3Y
+
 ### スピーカーを鳴らす
 
 @import "src/beep.ino"
 
 ![alt text](img/S工房_Arduino実験テキスト/image-10.png)
+
+シミュレータ: https://www.tinkercad.com/things/5FKkmIv4qLM-beep?sharecode=TjgQm_jIoLpmv3qW9PJEqsGAD2oYbOyaW7RovpZckFI
 
 ### PWM制御
 
@@ -128,6 +125,8 @@ ArduinoにはGPIOという外部との接続ポートが多数備わっている
 信号のONとOFFを繰り返す矩形波において、ONの時間の割合をデューティ比という。これを調整することでLEDが駆動するのに必要な電圧を維持しながら明るさを下げることができる。
 
 [PWM制御とは？原理や使用例をわかりやすく解説 株式会社ニッポー](https://www.nippo-co.com/odm-kiban/odm-012/)
+
+シミュレータ: https://www.tinkercad.com/things/6KN3Hap0hrG-pwm?sharecode=DwLKYmDQLybGIkkcCv3qyVIb2QsaT1SyTqdUDB5_bDQ
 
 ### センサー・シリアル通信
 
@@ -140,6 +139,8 @@ ArduinoにはGPIOという外部との接続ポートが多数備わっている
 書き込んだ後、Arduino IDE上部の虫眼鏡マークをクリックし、シリアルモニタを開くと超音波センサーからの距離が表示される。
 
 ![alt text](img/S工房_Arduino実験テキスト/image-12.png)
+
+シミュレータ: https://www.tinkercad.com/things/6BO0btq0w3n-sensor?sharecode=1PAincofvQBAYF26EJCTyZ1iDyQXMeGD2q2zsEvuALU
 
 #### シリアル通信を保存する（Windows）
 

@@ -107,6 +107,7 @@ ONにすると便利。</p>
 <span class="token punctuation">}</span>
 </code></pre><p></p>
 <p><img src="img/S%E5%B7%A5%E6%88%BF_Arduino%E5%AE%9F%E9%A8%93%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/image-9.png" alt="alt text"></p>
+<p>シミュレータ: <a href="https://www.tinkercad.com/things/1f08fL2G9yL-ledblink?sharecode=t2eqbIRQHKJGVIeTDEv0rqaDbygKTUhLPxp3QmmWi3Y">https://www.tinkercad.com/things/1f08fL2G9yL-ledblink?sharecode=t2eqbIRQHKJGVIeTDEv0rqaDbygKTUhLPxp3QmmWi3Y</a></p>
 <h3 id="スピーカーを鳴らす">スピーカーを鳴らす </h3>
 <p></p><pre data-role="codeBlock" data-info="ino" class="language-ino ino"><code><span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">//スピーカーを9ピンとGNDに接続する</span>
@@ -122,6 +123,7 @@ ONにすると便利。</p>
 <span class="token punctuation">}</span>
 </code></pre><p></p>
 <p><img src="img/S%E5%B7%A5%E6%88%BF_Arduino%E5%AE%9F%E9%A8%93%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/image-10.png" alt="alt text"></p>
+<p>シミュレータ: <a href="https://www.tinkercad.com/things/5FKkmIv4qLM-beep?sharecode=TjgQm_jIoLpmv3qW9PJEqsGAD2oYbOyaW7RovpZckFI">https://www.tinkercad.com/things/5FKkmIv4qLM-beep?sharecode=TjgQm_jIoLpmv3qW9PJEqsGAD2oYbOyaW7RovpZckFI</a></p>
 <h3 id="pwm制御">PWM制御 </h3>
 <p></p><pre data-role="codeBlock" data-info="ino" class="language-ino ino"><code><span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token function">pinMode</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//LED 13ピンを出力に設定する</span>
@@ -138,6 +140,7 @@ ONにすると便利。</p>
 <p>回路はそのまま。</p>
 <p>信号のONとOFFを繰り返す矩形波において、ONの時間の割合をデューティ比という。これを調整することでLEDが駆動するのに必要な電圧を維持しながら明るさを下げることができる。</p>
 <p><a href="https://www.nippo-co.com/odm-kiban/odm-012/">PWM制御とは？原理や使用例をわかりやすく解説 株式会社ニッポー</a></p>
+<p>シミュレータ: <a href="https://www.tinkercad.com/things/6KN3Hap0hrG-pwm?sharecode=DwLKYmDQLybGIkkcCv3qyVIb2QsaT1SyTqdUDB5_bDQ">https://www.tinkercad.com/things/6KN3Hap0hrG-pwm?sharecode=DwLKYmDQLybGIkkcCv3qyVIb2QsaT1SyTqdUDB5_bDQ</a></p>
 <h3 id="センサーシリアル通信">センサー・シリアル通信 </h3>
 <p>超音波センサーは発信した超音波が物体に反射して戻ってくるまでの時間を計測することで、その物体までの距離を計測することができる。</p>
 <p></p><pre data-role="codeBlock" data-info="ino" class="language-ino ino"><code><span class="token comment">//超音波センサー（HC-SR04）での距離を計測し、シリアルモニタに出力する</span>
@@ -184,6 +187,7 @@ ONにすると便利。</p>
 <p><img src="img/S%E5%B7%A5%E6%88%BF_Arduino%E5%AE%9F%E9%A8%93%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/image-11.png" alt="alt text"></p>
 <p>書き込んだ後、Arduino IDE上部の虫眼鏡マークをクリックし、シリアルモニタを開くと超音波センサーからの距離が表示される。</p>
 <p><img src="img/S%E5%B7%A5%E6%88%BF_Arduino%E5%AE%9F%E9%A8%93%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/image-12.png" alt="alt text"></p>
+<p>シミュレータ: <a href="https://www.tinkercad.com/things/6BO0btq0w3n-sensor?sharecode=1PAincofvQBAYF26EJCTyZ1iDyQXMeGD2q2zsEvuALU">https://www.tinkercad.com/things/6BO0btq0w3n-sensor?sharecode=1PAincofvQBAYF26EJCTyZ1iDyQXMeGD2q2zsEvuALU</a></p>
 <h4 id="シリアル通信を保存するwindows">シリアル通信を保存する（Windows） </h4>
 <p><a href="https://qiita.com/its_kun/items/fefa1fa357cbc2c2f4e1#%E3%82%B7%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%8F%97%E4%BF%A1">シリアルデータの受信</a></p>
 <h4 id="シリアル通信を保存するmac">シリアル通信を保存する（Mac） </h4>
