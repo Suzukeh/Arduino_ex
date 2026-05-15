@@ -1,0 +1,267 @@
+<!DOCTYPE html><html><head>
+      <title>S工房_Arduino実験テキスト</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/hikaru/.antigravity/extensions/shd101wyy.markdown-preview-enhanced-0.8.25-universal/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-details{margin:0;padding:0;border:none}.markdown-preview .md-toc summary.md-toc-link-wrapper{cursor:pointer;list-style-position:outside}.markdown-preview .md-toc summary.md-toc-link-wrapper::marker{font-size:.85em}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='0']{margin-left:12px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='1']{margin-left:28px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='2']{margin-left:44px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='3']{margin-left:60px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='4']{margin-left:76px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='5']{margin-left:80px}.markdown-preview a.tag,.markdown-preview a.tag:active,.markdown-preview a.tag:link,.markdown-preview a.tag:visited,.markdown-preview span.tag{display:inline-block;background-color:var(--vscode-badge-background,rgba(127,127,127,.18));color:var(--vscode-badge-foreground,currentColor);border-radius:2em;font-size:.85em;font-weight:500;padding:.05em .55em;line-height:1.5;white-space:nowrap;text-decoration:none;text-shadow:none;box-shadow:none;transition:background-color .12s ease,opacity .12s ease}.markdown-preview a.tag{cursor:pointer}.markdown-preview a.tag:focus,.markdown-preview a.tag:hover{background-color:var(--vscode-badge-background,rgba(127,127,127,.32));color:var(--vscode-badge-foreground,currentColor);opacity:.85;text-decoration:none;outline:0}.markdown-preview .wikilink-embed-content{border-left:3px solid var(--vscode-textBlockQuote-border,rgba(128,128,128,.3));background:var(--vscode-textBlockQuote-background,rgba(128,128,128,.05));margin:.5em 0;padding:.5em .75em;border-radius:0 3px 3px 0}.markdown-preview .wikilink-embed-content.wikilink-embed-error{border-left-color:var(--vscode-errorForeground,#cf222e);color:var(--vscode-errorForeground,#cf222e);font-style:italic;opacity:.8}.markdown-preview .wikilink-embed-content h1:first-child,.markdown-preview .wikilink-embed-content h2:first-child,.markdown-preview .wikilink-embed-content h3:first-child,.markdown-preview .wikilink-embed-content h4:first-child,.markdown-preview .wikilink-embed-content h5:first-child,.markdown-preview .wikilink-embed-content h6:first-child{margin-top:.25em}.markdown-preview .wikilink-embed-content .wikilink-embed-content{margin:.25em 0;padding:.25em .5em}.markdown-preview .block-id{display:none}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-details{margin:0;padding:0;border:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='0']{padding-left:0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='1']{padding-left:16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='2']{padding-left:32px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='3']{padding-left:48px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='4']{padding-left:64px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='5']{padding-left:80px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+@font-face {
+  font-family: serif;
+  src: local("MS Mincho");
+}
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="番外実験arduino">番外実験：Arduino </h1>
+<p>本テキストは2026年5月時点の情報で構成されている。担当者は必要に応じて本テキストを更新すること。</p>
+<p>本実験に関わる文書のライセンスはCC0 1.0 Universalである。担当者にはライセンスの変更も含めた全ての編集を認める。</p>
+<h2 id="概要">概要 </h2>
+<p>Arduinoは安価で扱いやすい代表的なマイコンボードの一つである。本実験では、Arduinoを用いてLEDを点滅させるプログラム、俗に「Lチカ」と呼ばれるものから始める。自主実験への応用を見据え、最終的にはセンサの値をPCに記録するデータロガーとしての利用を習得することを目標とする。</p>
+<h3 id="注意事項">注意事項 </h3>
+<p>ArduinoはC言語やC++をベースとしている。1年後期の基礎プログラミング演習でC言語を学んでいる場合は復習しつつ読んでいくとよい。</p>
+<p>プログラミング未習得の場合は、以降の内容を授業時間内に理解することは難しいため、参考になるWebページの章で挙げた資料を参考に、事前にC言語の基礎を学んでおくとよい。ただし、書籍はバージョンなど細かい違いで混乱する可能性が高いため非推奨である。</p>
+<h2 id="環境構築">環境構築 </h2>
+<h4 id="初心者向け-arduino-ideのインストール">初心者向け: Arduino IDEのインストール </h4>
+<p><a href="https://www.arduino.cc/en/software/">https://www.arduino.cc/en/software/</a></p>
+<p>開発に必要な機能が一通り揃っていて、GUIで簡単に設定ができる。以降の説明はこのソフトを使っている前提で進める。ある程度こうした開発に慣れている場合は後述のCLIやVSCodeの拡張機能を使ってもよい。</p>
+<p><img src="img/S%E5%B7%A5%E6%88%BF_Arduino%E5%AE%9F%E9%A8%93%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/image.png" alt="alt text"></p>
+<p>インストールは通常のソフトと同様に行う。<br>
+完了したら起動する。</p>
+<p><img src="img/S%E5%B7%A5%E6%88%BF_Arduino%E5%AE%9F%E9%A8%93%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/image-1.png" alt="alt text"></p>
+<h4 id="ラボ外での確認方法シミュレータ">ラボ外での確認方法：シミュレータ </h4>
+<p><a href="https://www.tinkercad.com/">https://www.tinkercad.com/</a></p>
+<p>TinkercadはAutodesk社が提供する無料のオンライン3Dデザインツールである。電子工作のシミュレーション機能も備わっており、Arduinoをはじめとして様々な部品が使える。</p>
+<h4 id="上級者向け1-arduino-cli">上級者向け1: Arduino CLI </h4>
+<p><a href="https://arduino.github.io/arduino-cli/installation/">https://arduino.github.io/arduino-cli/installation/</a></p>
+<h4 id="上級者向け2-platformio">上級者向け2: PlatformIO </h4>
+<p>VSCode拡張機能</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide">https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide</a></p>
+<h3 id="arduino-ideの設定">Arduino IDEの設定 </h3>
+<h4 id="スケッチブックの場所">スケッチブックの場所 </h4>
+<p>Arduinoのプログラムを保存する場所を指定する。</p>
+<h4 id="エディター言語">エディター言語 </h4>
+<p>言語を日本語にすることができる。</p>
+<p><img src="img/S%E5%B7%A5%E6%88%BF_Arduino%E5%AE%9F%E9%A8%93%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/image-5.png" alt="alt text"></p>
+<h4 id="コンパイラの警告">コンパイラの警告 </h4>
+<p>どれくらい厳しくエラーを出力するかを指定する。</p>
+<p><code>デフォルト</code>に設定するとよい。</p>
+<h4 id="書き込み後にコードを検証する">書き込み後にコードを検証する </h4>
+<p>ONにする。</p>
+<h4 id="自動保存">自動保存 </h4>
+<p>勝手に上書きされたくなければOFF、保存し忘れを防止したければON。</p>
+<h4 id="エディターのクイックサジェスト">エディターのクイックサジェスト </h4>
+<p>書いている途中で候補が出てくる機能。<br>
+ONにすると便利。</p>
+<h2 id="実験手順">実験手順 </h2>
+<h3 id="pcとarduinoの接続">PCとArduinoの接続 </h3>
+<p>USBケーブル(A to B)でPCとArduinoを接続し、Arduino IDEでボードを選択する。</p>
+<p><img src="img/S%E5%B7%A5%E6%88%BF_Arduino%E5%AE%9F%E9%A8%93%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/image-8.png" alt="alt text"></p>
+<p>→(右矢印)を押すとコードをArduinoに書き込む。</p>
+<p>☑️(チェックマーク)では書き込まずにコードの文法チェックのみを行う。</p>
+<h3 id="arduinoプログラミングの基本">Arduinoプログラミングの基本 </h3>
+<p></p><pre data-role="codeBlock" data-info="ino" class="language-ino ino"><code><span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// スラッシュ二つを先頭に書いた行はコメントアウトになる。プログラムの挙動には影響しないメモ書きなどに使う。</span>
+    <span class="token comment">// setup関数はプログラムの起動時（リセット時）に一度だけ実行される。</span>
+    <span class="token comment">// 主な用途はピンの設定など。</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// loop関数はsetup関数が終わった後に何度も繰り返し実行される。Arduinoが止まらない限り動作し続ける。</span>
+<span class="token punctuation">}</span>
+</code></pre><p></p>
+<p>この<code>void setup()</code>と<code>void loop()</code>という関数の定義だけを行い、具体的な動作を何も指定しないコードを書き込む(右矢印のマークをクリック)。</p>
+<p>完了しても何も起こらないが、正常である。IDE下部の出力にエラーが出ていないことを確認する。</p>
+<h3 id="lチカledを点滅させる">Lチカ：LEDを点滅させる </h3>
+<p>ArduinoにはGPIOという外部との接続ポートが多数備わっている。これを使ってLEDを点滅させる「Lチカ」はArduino学習における"Hello World"的立ち位置のプログラムである。</p>
+<p></p><pre data-role="codeBlock" data-info="ino" class="language-ino ino"><code><span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//13ピンをLEDのアノード(+)に、GNDをカソード(-)に接続する。</span>
+    <span class="token comment">//後のため、ブレッドボードを使うとよい。</span>
+    <span class="token function">pinMode</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//13ピンを出力に設定する</span>
+    <span class="token comment">//このsetup関数内はプログラムの起動時（リセット時）に一度だけ実行される。</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">digitalWrite</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//13ピンをHIGH(5V)にする</span>
+    <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//1000ミリ秒=1秒待つ</span>
+    <span class="token function">digitalWrite</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//13ピンをLOW(0V)にする</span>
+    <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//1000ミリ秒=1秒待つ</span>
+    <span class="token comment">//このloop関数内を何度も繰り返し続けるため、LEDが点滅する。</span>
+<span class="token punctuation">}</span>
+</code></pre><p></p>
+<p><img src="img/S%E5%B7%A5%E6%88%BF_Arduino%E5%AE%9F%E9%A8%93%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/image-9.png" alt="alt text"></p>
+<h3 id="スピーカーを鳴らす">スピーカーを鳴らす </h3>
+<p></p><pre data-role="codeBlock" data-info="ino" class="language-ino ino"><code><span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//スピーカーを9ピンとGNDに接続する</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//440Hzの矩形波を9ピンから1秒間出力する</span>
+    <span class="token function">tone</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">440</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//1秒待つ</span>
+    <span class="token function">noTone</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 9ピンのtoneを止める</span>
+    <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//1秒待つ</span>
+    <span class="token comment">//これを繰り返し、音が1秒おきになる。</span>
+<span class="token punctuation">}</span>
+</code></pre><p></p>
+<p><img src="img/S%E5%B7%A5%E6%88%BF_Arduino%E5%AE%9F%E9%A8%93%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/image-10.png" alt="alt text"></p>
+<h3 id="pwm制御">PWM制御 </h3>
+<p></p><pre data-role="codeBlock" data-info="ino" class="language-ino ino"><code><span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">pinMode</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//LED 13ピンを出力に設定する</span>
+    <span class="token function">pinMode</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//スピーカー 9ピンを出力に設定する</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//0-255の範囲でデューティ比(ONの時間の割合)を指定できる。これによりLEDの明るさや、スピーカーの音色を調整できる。</span>
+    <span class="token function">analogWrite</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token function">analogWrite</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p></p>
+<p>回路はそのまま。</p>
+<p>信号のONとOFFを繰り返す矩形波において、ONの時間の割合をデューティ比という。これを調整することでLEDが駆動するのに必要な電圧を維持しながら明るさを下げることができる。</p>
+<p><a href="https://www.nippo-co.com/odm-kiban/odm-012/">PWM制御とは？原理や使用例をわかりやすく解説 株式会社ニッポー</a></p>
+<h3 id="センサーシリアル通信">センサー・シリアル通信 </h3>
+<p>超音波センサーは発信した超音波が物体に反射して戻ってくるまでの時間を計測することで、その物体までの距離を計測することができる。</p>
+<p></p><pre data-role="codeBlock" data-info="ino" class="language-ino ino"><code><span class="token comment">//超音波センサー（HC-SR04）での距離を計測し、シリアルモニタに出力する</span>
+<span class="token comment">// VCC → 5V</span>
+<span class="token comment">// GND → GND</span>
+<span class="token comment">// Trig → 12</span>
+<span class="token comment">// Echo → 11</span>
+
+<span class="token keyword keyword-int">int</span> trigPin <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>  <span class="token comment">// このように変数を使うとコードが読みやすくなる。今回は12ピンをTriggerに設定している</span>
+<span class="token keyword keyword-int">int</span> echoPin <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">;</span>  <span class="token comment">// 11ピンをEchoに設定</span>
+<span class="token keyword keyword-long">long</span> duration<span class="token punctuation">,</span> cm<span class="token punctuation">;</span> <span class="token comment">//距離を格納する変数</span>
+
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">9600</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//シリアル通信を開始する</span>
+    <span class="token function">pinMode</span><span class="token punctuation">(</span>trigPin<span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//トリガーピンを出力に設定する</span>
+    <span class="token function">pinMode</span><span class="token punctuation">(</span>echoPin<span class="token punctuation">,</span> <span class="token constant">INPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//エコーピンを入力に設定する</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//トリガーピンを一瞬HIGHにして、超音波を発信</span>
+    <span class="token function">digitalWrite</span><span class="token punctuation">(</span>trigPin<span class="token punctuation">,</span> <span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">delayMicroseconds</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">digitalWrite</span><span class="token punctuation">(</span>trigPin<span class="token punctuation">,</span> <span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">delayMicroseconds</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">digitalWrite</span><span class="token punctuation">(</span>trigPin<span class="token punctuation">,</span> <span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">//エコーピンがHIGHになった時間を測定する</span>
+    duration <span class="token operator">=</span> <span class="token function">pulseIn</span><span class="token punctuation">(</span>echoPin<span class="token punctuation">,</span> <span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">//時間を距離に変換する</span>
+    <span class="token comment">//距離[cm] = ((音速[cm/s])*時間[s])/2</span>
+    <span class="token comment">//音速は約343m/s = 34300cm/s</span>
+    <span class="token comment">//durationはマイクロ秒単位なので、1[μs] = 0.000001[s]</span>
+    <span class="token comment">//音波は対象物まで往復しているので2で割る</span>
+    cm <span class="token operator">=</span> duration <span class="token operator">*</span> <span class="token number">0.000001</span> <span class="token operator">*</span> <span class="token number">34000</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    
+    <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>cm<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//センチメートルを出力する</span>
+    <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"cm"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//センチメートルの単位を出力する</span>
+    <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//改行</span>
+    
+    <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">250</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p></p>
+<p><img src="img/S%E5%B7%A5%E6%88%BF_Arduino%E5%AE%9F%E9%A8%93%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/image-11.png" alt="alt text"></p>
+<p>書き込んだ後、Arduino IDE上部の虫眼鏡マークをクリックし、シリアルモニタを開くと超音波センサーからの距離が表示される。</p>
+<p><img src="img/S%E5%B7%A5%E6%88%BF_Arduino%E5%AE%9F%E9%A8%93%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/image-12.png" alt="alt text"></p>
+<h4 id="シリアル通信を保存するwindows">シリアル通信を保存する（Windows） </h4>
+<p><a href="https://qiita.com/its_kun/items/fefa1fa357cbc2c2f4e1#%E3%82%B7%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%8F%97%E4%BF%A1">シリアルデータの受信</a></p>
+<h4 id="シリアル通信を保存するmac">シリアル通信を保存する（Mac） </h4>
+<p><a href="https://qiita.com/akaneburyo/items/54ab07bd755058514375">とにかく最速でSerial通信のログをファイルに残す</a></p>
+<h3 id="センサーを使ったリアルタイム制御">センサーを使ったリアルタイム制御 </h3>
+<p>超音波センサーが検知した距離に応じてLEDの明るさとスピーカーの音量を変更する。</p>
+<p></p><pre data-role="codeBlock" data-info="ino" class="language-ino ino"><code><span class="token comment">//超音波センサー（HC-SR04）での距離を計測し、シリアルモニタに出力する</span>
+<span class="token comment">//検知したcmに応じてLEDの明るさとスピーカーの音量を変更する</span>
+<span class="token comment">//ただし、デューティ比は255を超えることはできない</span>
+
+<span class="token comment">// VCC → 5V</span>
+<span class="token comment">// GND → GND</span>
+<span class="token comment">// Trig → 12</span>
+<span class="token comment">// Echo → 11</span>
+
+<span class="token keyword keyword-int">int</span> trigPin <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>  <span class="token comment">// Trigger</span>
+<span class="token keyword keyword-int">int</span> echoPin <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">;</span>  <span class="token comment">// Echo</span>
+<span class="token keyword keyword-long">long</span> duration<span class="token punctuation">,</span> cm<span class="token punctuation">;</span> <span class="token comment">//距離を格納する変数</span>
+
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">9600</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//シリアル通信を開始する</span>
+    <span class="token function">pinMode</span><span class="token punctuation">(</span>trigPin<span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//トリガーピンを出力に設定する</span>
+    <span class="token function">pinMode</span><span class="token punctuation">(</span>echoPin<span class="token punctuation">,</span> <span class="token constant">INPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//エコーピンを入力に設定する</span>
+
+    <span class="token function">pinMode</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//LED 13ピンを出力に設定する</span>
+    <span class="token function">pinMode</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//スピーカー 9ピンを出力に設定する</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//トリガーピンを一瞬HIGHにして、超音波を発信</span>
+    <span class="token function">digitalWrite</span><span class="token punctuation">(</span>trigPin<span class="token punctuation">,</span> <span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">delayMicroseconds</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">digitalWrite</span><span class="token punctuation">(</span>trigPin<span class="token punctuation">,</span> <span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">delayMicroseconds</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">digitalWrite</span><span class="token punctuation">(</span>trigPin<span class="token punctuation">,</span> <span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">//エコーピンがHIGHになっている時間を測定する</span>
+    duration <span class="token operator">=</span> <span class="token function">pulseIn</span><span class="token punctuation">(</span>echoPin<span class="token punctuation">,</span> <span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">//時間を距離に変換する</span>
+    <span class="token comment">//距離[cm] = ((音速[cm/s])*時間[s])/2</span>
+    <span class="token comment">//音速は約343m/s = 34300cm/s</span>
+    <span class="token comment">//durationはマイクロ秒単位なので、1[μs] = 0.000001[s]</span>
+    <span class="token comment">//音波は対象物まで往復しているので2で割る</span>
+    cm <span class="token operator">=</span> duration <span class="token operator">*</span> <span class="token number">0.000001</span> <span class="token operator">*</span> <span class="token number">34000</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    
+    <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>cm<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//センチメートルを出力する</span>
+    <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"cm"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//センチメートルの単位を出力する</span>
+    <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//改行</span>
+
+    <span class="token function">analogWrite</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> cm<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 距離に応じてLEDの明るさを変更</span>
+    <span class="token function">analogWrite</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> cm<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 距離に応じてスピーカーの音を変更</span>
+    <span class="token comment">// analogWriteの引数は0から255なので、max関数で255を超えないようにしている</span>
+    
+    <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">250</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p></p>
+<h2 id="課題">課題 </h2>
+<p>いろいろなパラメータを変えてみる。</p>
+<ul>
+<li>出力するパーツ(LED、スピーカー)</li>
+<li>入力するパーツ(超音波センサー、ボタン)</li>
+<li>toneの周波数やデューティ比</li>
+</ul>
+<h2 id="参考になるwebページ">参考になるWebページ </h2>
+<ul>
+<li>Arduino言語日本語リファレンス <a href="https://www.musashinodenpa.com/arduino/ref/">https://www.musashinodenpa.com/arduino/ref/</a></li>
+<li>一週間で身につくC言語の基本 <a href="https://c-lang.sevendays-study.com/index.html">https://c-lang.sevendays-study.com/index.html</a></li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
